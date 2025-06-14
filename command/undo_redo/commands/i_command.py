@@ -2,6 +2,6 @@ from abc import ABC
 
 
 class ICommand(ABC):
-    def execute(user):
+    def execute(task):
         pass
 
