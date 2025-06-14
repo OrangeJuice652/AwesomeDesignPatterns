@@ -1,5 +1,5 @@
-from undo_redo.command Import ICommand
-from .history Import History
+from undo_redo.commands.i_command import ICommand
+from .history import History
 
 
 class Invoker:
@@ -9,5 +9,6 @@ class Invoker:
         self.command = command
 
     def execute(self, history: History):
+        print('invoker.execute')
         return self.command.execute(history)
 
