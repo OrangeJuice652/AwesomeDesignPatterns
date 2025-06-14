@@ -9,6 +9,5 @@ class Invoker:
         self.command = command
 
     def execute(self, history: History):
-        print('invoker.execute')
         return self.command.execute(history)
 

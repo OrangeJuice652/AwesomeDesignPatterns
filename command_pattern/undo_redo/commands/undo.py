@@ -11,5 +11,5 @@ class Undo(ICommand):
             print('the command history is empty')
             return history
         else:
-            return command.execute(history)
+            return command.undo_command().execute(history)
 

@@ -55,15 +55,12 @@ class Client:
 
     def invoke_command(self, command_code: str):
         print(f'invoke_command: {command_code}')
-        print(f'before history: {self.history.current}')
         if command_code == 'up':
-            print('up command is invoked')
             self.invoker.set_command(
                 Up()
             )
             self.history = self.invoker.execute(self.history)
         elif command_code == 'down':
-            print('down command is invoked')
             self.invoker.set_command(
                 Down()
             )
@@ -78,5 +75,5 @@ class Client:
                 Redo()
             )
             self.history = self.invoker.execute(self.history)
-        print(f'after history: {self.history.current}')
+        self.history.print_history()
 

@@ -6,7 +6,7 @@ from .i_command import ICommand
 class Redo(ICommand):
     def execute(self, history: History):
         try:
-            command: Optional[ICommand] = history.last_command()
+            command: Optional[ICommand] = history.pop_last_command()
         except IndexError:
             print('the command history is empty')
             return history
